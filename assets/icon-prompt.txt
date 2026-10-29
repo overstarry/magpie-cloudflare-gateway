@@ -1,0 +1,9 @@
+Use case: logo-brand
+Asset type: production app/plugin icon for the open-source project "Magpie Cloudflare Gateway"; one standalone square icon.
+Primary request: design an elegant, memorable icon that combines a magpie and a cloud gateway into a single coherent mark.
+Subject: a highly simplified black-and-white magpie in flight passing through a warm orange cloud-shaped gateway. The cloud outline and bird wing should interlock through clean negative space, conveying routing and connection. Use only a few bold shapes.
+Style/medium: premium flat geometric brand design, exceptionally clean vector-like edges rendered as a bitmap; restrained and sophisticated rather than a cartoon mascot.
+Composition/framing: centered single mark with balanced negative space and approximately 12% clear margin. Square 1024 x 1024 canvas. Strong silhouette, recognizable when reduced to 32 pixels, readable on both light and dark UI backgrounds.
+Color palette: Cloudflare-inspired warm orange, charcoal black, and a small ivory white wing accent. This is an independent project's original symbol, not a copy of either company's official logo.
+Scene/backdrop: genuinely transparent background, no enclosing app tile and no scenery.
+Constraints: no text, no letters, no watermark, no mockup, no presentation board, no alternate concepts, no thin strokes, no tiny decorative details, no gradients, no glow, no shadows. Output one polished finished icon.

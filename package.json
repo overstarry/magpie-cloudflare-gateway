@@ -1,0 +1,30 @@
+{
+  "name": "magpie-cloudflare-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare AI Gateway provider plugin for Magpie",
+  "type": "module",
+  "main": "./index.mjs",
+  "files": [
+    "index.mjs",
+    "lib.mjs",
+    "login.mjs",
+    "adapters.mjs",
+    "catalog.mjs",
+    "discovery.mjs",
+    "options.example.json",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "cloudflare",
+    "ai-gateway"
+  ]
+}
