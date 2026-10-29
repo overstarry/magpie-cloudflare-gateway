@@ -48,6 +48,17 @@ Agent 中的模型名为 `cloudflare-gateway-byok/<provider>/<model>`，例如 `
 | groq | groq | Chat Completions |
 | mistral | mistral | Chat Completions |
 | openrouter | openrouter | Chat Completions |
+| cerebras | cerebras | Chat Completions |
+| fireworks | fireworks | Chat Completions |
+| perplexity | perplexity-ai | Responses（Agent API） |
+
+未内置的 Cloudflare 供应商：
+
+- Moonshot：未确认 Cloudflare 有原生 Gateway 路径（官方文档无此页）；本插件只使用原生端点，确认 slug 后可用 adapters 添加。
+- Azure OpenAI、Amazon Bedrock、Google Vertex AI：路径含账号自己的资源、区域或项目（Azure 还需 api-version 查询参数），无法用固定路径内置。
+- Cohere：模型列表是原生格式，不属于已支持的 OpenAI、Anthropic、Google 三种格式。
+- Baseten：部署地址因账号而异。
+- 其余（图像、语音、视频、搜索类）：不是对话模型。
 
 当前真实推理验收覆盖 DeepSeek，其余适配使用模拟响应测试。模型名称过滤含部分启发式规则，特殊模型可能被过滤。
 

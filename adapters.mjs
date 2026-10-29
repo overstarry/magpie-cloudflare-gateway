@@ -70,6 +70,31 @@ const BUILTINS = {
     format: "openai",
     catalog: "openrouter",
   },
+  cerebras: {
+    slug: "cerebras",
+    protocol: "chat",
+    basePath: "",
+    modelsPath: "/models",
+    format: "openai",
+    catalog: "cerebras",
+  },
+  fireworks: {
+    slug: "fireworks",
+    protocol: "chat",
+    basePath: "",
+    modelsPath: "/models",
+    format: "openai",
+    catalog: "fireworks-ai",
+  },
+  // Perplexity's /v1/models lists Agent API models, which are served by /v1/responses.
+  perplexity: {
+    slug: "perplexity-ai",
+    protocol: "responses",
+    basePath: "/v1",
+    modelsPath: "/v1/models",
+    format: "openai",
+    catalog: "perplexity-agent",
+  },
 };
 
 export function adaptersFor(custom = {}) {

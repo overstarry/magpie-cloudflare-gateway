@@ -3,6 +3,7 @@ import { test } from "node:test";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { adaptersFor } from "../adapters.mjs";
 import { modelMetadata } from "../catalog.mjs";
 import { createPlugin } from "../lib.mjs";
 
@@ -108,7 +109,7 @@ test("403 falls back to live lists; missing keys never acquire catalog models", 
     f.requests.filter(
       (r) => new URL(r.url).hostname === "gateway.ai.cloudflare.com",
     ).length,
-    8,
+    Object.keys(adaptersFor()).length,
   );
 });
 
@@ -451,6 +452,24 @@ test("Google page tokens and vendor-provided capacity are preserved", async () =
     models["google/first"].api.url,
     `${base}/google-ai-studio/v1beta/openai`,
   );
+});
+
+test("long-tail built-ins list and route through their Cloudflare paths", async () => {
+  for (const [provider, slug, list, api, npm] of [
+    ["cerebras", "cerebras", "/models", "", "@ai-sdk/openai-compatible"],
+    ["fireworks", "fireworks", "/models", "", "@ai-sdk/openai-compatible"],
+    ["perplexity", "perplexity-ai", "/v1/models", "/v1", "@ai-sdk/openai"],
+  ]) {
+    const f = fixture({ control: () => json({ result: [row(slug)] }) });
+    const models = await listing(createPlugin(opts(), f.fetchImpl));
+    assert.deepEqual(Object.keys(models), [`${provider}/test-chat`]);
+    assert.equal(
+      models[`${provider}/test-chat`].api.url,
+      `${base}/${slug}${api}`,
+    );
+    assert.equal(models[`${provider}/test-chat`].api.npm, npm);
+    assert.ok(f.requests.some((r) => r.url === `${base}/${slug}${list}`));
+  }
 });
 
 test("public catalog disk cache survives an offline restart without storing tokens", async () => {
