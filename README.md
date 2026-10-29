@@ -1,5 +1,7 @@
 # Cloudflare AI Gateway for Magpie
 
+<img src="assets/icon.png" width="128" height="128" alt="Magpie flying through an orange cloud gateway" />
+
 在 Magpie 登录界面配置 Cloudflare Account、Gateway、BYOK alias 和 Token。插件自动发现供应商和模型，上游 API Key 始终保存在 Cloudflare，所有请求强制禁止 Unified Billing 回退。
 
 ## 安装与登录
