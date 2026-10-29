@@ -119,7 +119,7 @@ bun test
 - 实际 Magpie 界面已逐步验证 Account ID、Gateway ID、可选 alias 和 Token 输入。
 - 当前账号已按新表单保存网关字段，全局选项为空，原 Token 保持不变。
 - Magpie 模型测试：deepseek-flash 1318 ms，deepseek-v4-pro 730 ms，均成功。
-- npm 打包预检包含 9 个项目文件，不包含本地配置或凭证。
+- npm 打包预检包含 10 个文件（含图标），不包含本地配置或凭证。
 
 ## 参考
 

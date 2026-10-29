@@ -7,7 +7,6 @@
   "main": "./index.mjs",
   "files": [
     "assets/icon.png",
-    "assets/icon-prompt.txt",
     "index.mjs",
     "lib.mjs",
     "login.mjs",
