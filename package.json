@@ -5,6 +5,9 @@
   "description": "Cloudflare AI Gateway provider plugin for Magpie",
   "type": "module",
   "main": "./index.mjs",
+  "magpie": {
+    "icon": "https://raw.githubusercontent.com/overstarry/magpie-cloudflare-gateway/main/assets/icon.png"
+  },
   "files": [
     "assets/icon.png",
     "index.mjs",
